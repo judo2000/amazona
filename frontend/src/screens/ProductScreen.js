@@ -12,7 +12,7 @@ import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { getError } from '../utils';
-import { Store } from '../store';
+import { Store } from '../Store';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -51,11 +51,19 @@ const ProductScreen = () => {
   }, [slug]);
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart } = state;
 
-  const addToCartHandler = () => {
+  const addToCartHandler = async () => {
+    const existsItem = cart.cartItems.find((x) => x._id === product._id);
+    const quantity = existsItem ? existsItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/products/${product._id}`);
+    if (data.countInStock < quantity) {
+      window.alert('Sorry, Product is out of stock');
+      return;
+    }
     ctxDispatch({
       type: 'CART_ADD_ITEM',
-      payload: { ...product, quantity: 1 },
+      payload: { ...product, quantity: quantity },
     });
   };
 
