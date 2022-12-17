@@ -15,6 +15,7 @@ const ShippingAddressScreen = () => {
   } = state;
   const [fullName, setFullName] = useState(shippingAddress.fullName || '');
   const [address, setAddress] = useState(shippingAddress.address || '');
+  const [address2, setAddress2] = useState(shippingAddress.address2 || '');
   const [city, setCity] = useState(shippingAddress.city || '');
   const [myState, setMyState] = useState(shippingAddress.myState || '');
   const [postalCode, setPostalCode] = useState(
@@ -35,6 +36,7 @@ const ShippingAddressScreen = () => {
       payload: {
         fullName,
         address,
+        address2,
         city,
         myState,
         postalCode,
@@ -46,6 +48,7 @@ const ShippingAddressScreen = () => {
       JSON.stringify({
         fullName,
         address,
+        address2,
         city,
         myState,
         postalCode,
@@ -78,6 +81,15 @@ const ShippingAddressScreen = () => {
             <Form.Control
               value={address}
               onChange={(e) => setAddress(e.target.value)}
+              required
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="address2">
+            <Form.Label>Address 2</Form.Label>
+            <Form.Control
+              value={address2}
+              onChange={(e) => setAddress2(e.target.value)}
               required
             />
           </Form.Group>
