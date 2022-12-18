@@ -10,7 +10,7 @@ import Badge from 'react-bootstrap/Badge';
 import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Store } from './Store';
+import { Store } from './Store.js';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';

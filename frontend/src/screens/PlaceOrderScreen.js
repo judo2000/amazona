@@ -1,7 +1,7 @@
 import { useContext, useEffect, useReducer } from 'react';
 import Axios from 'axios';
 import { Helmet } from 'react-helmet-async';
-import { Store } from '../Store';
+import { Store } from '../Store.js';
 import CheckoutSteps from '../components/CheckoutSteps';
 import { Link, useNavigate } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';

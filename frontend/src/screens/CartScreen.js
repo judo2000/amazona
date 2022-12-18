@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Store } from '../Store';
+import { Store } from '../Store.js';
 import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';

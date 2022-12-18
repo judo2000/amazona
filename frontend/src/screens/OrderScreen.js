@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 import { useNavigate, useParams } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import { Store } from '../Store';
+import { Store } from '../Store.js';
 import { getError } from '../utils';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';

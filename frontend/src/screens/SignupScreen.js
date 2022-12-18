@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
-import { Store } from '../Store';
+import { Store } from '../Store.js';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';

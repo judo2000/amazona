@@ -1,5 +1,5 @@
 import React, { useContext, useReducer, useState } from 'react';
-import { Store } from '../Store';
+import { Store } from '../Store.js';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
