@@ -33,7 +33,14 @@ const ProfileScreen = () => {
   });
   const submitHandler = async (e) => {
     e.preventDefault();
+
     try {
+      if (password) {
+        if (password !== confirmPassword) {
+          toast.error('Passwords do not match');
+          return;
+        }
+      }
       const { data } = await axios.put(
         '/api/users/profile',
         {
